@@ -4,13 +4,13 @@
 % A. Create a random DNA sequence of length 100. 
 seq1=randseq(100);
 % B. Create a second sequence from the first one by changing the middle 20 basepairs (at positions 41-60)
-seq2=[randseq(40), seq1(41:60), randseq(40)]
+seq2=[randseq(40), seq1(41:60), randseq(40)];
 % C. run swalign on the two sequences with the default parameters
-swalign(seq1, seq2, 'Alphabet', 'nt','Showscore',true)
+swalign(seq1, seq2, 'Alphabet', 'nt','Showscore',true);
 % D. run swalign with much higher and lower values of the GapOpen parameter
 % and explain the results. 
 %higher:
-swalign(seq1, seq2, 'Alphabet', 'nt','GapOpen', 200, 'Showscore',true)
+swalign(seq1, seq2, 'Alphabet', 'nt','GapOpen', 200, 'Showscore',true);
 %lower:
 swalign(seq1, seq2, 'Alphabet', 'nt','GapOpen', 1, 'Showscore',true)
 %the higher one makes gaps prohibitively expensive, such that only straight
@@ -21,7 +21,7 @@ swalign(seq1, seq2, 'Alphabet', 'nt','GapOpen', 1, 'Showscore',true)
 % explain the result
 swalign(seq1, seq2, 'Alphabet', 'nt','GapOpen', 1, 'ExtendGap', 30, 'Showscore',true)
 %the penalty for extending is too high and with the gap penalty low, it
-%chooses a path with no/few jumps that is not perfectly straight(gaps)
+%chooses a path with no/few jumps that is not perfectly straight
 
 % F. run swalign align with the default value of GapOpen and a low value
 % of ExtendGap and explain the result. 
